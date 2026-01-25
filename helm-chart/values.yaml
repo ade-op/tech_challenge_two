@@ -1,0 +1,19 @@
+
+image:
+  repository: 381492260180.dkr.ecr.us-east-1.amazonaws.com/hello-app
+  tag: latest
+
+replicaCount: 1
+
+service:
+  type: ClusterIP
+  port: 3000
+
+ingress:
+  enabled: true
+
+hpa:
+  enabled: true
+  minReplicas: 1
+  maxReplicas: 4
+  cpuUtilization: 50
