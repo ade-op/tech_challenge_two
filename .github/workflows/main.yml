@@ -30,7 +30,7 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          IMAGE_URI="$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO:latest"
+          IMAGE_URI="${AWS_ACCOUNT_ID}.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO:latest"
           docker build -t $IMAGE_URI .
           docker push $IMAGE_URI
 
